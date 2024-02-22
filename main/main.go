@@ -4,7 +4,7 @@ import (
 	"flag"
 	"os"
 
-	"github.com/xtls/xray-core/main/commands/base"
+	"github.com/lmmqxyx404/my_core/main/commands/base"
 )
 
 func main() {

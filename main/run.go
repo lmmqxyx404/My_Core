@@ -1,6 +1,6 @@
 package main
 
-import "github.com/xtls/xray-core/main/commands/base"
+import "github.com/lmmqxyx404/my_core/main/commands/base"
 
 var cmdRun = &base.Command{
 	UsageLine: "{{.Exec}} run [-c config.json] [-confdir dir]",
