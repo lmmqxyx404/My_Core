@@ -11,6 +11,16 @@ func main() {
 	// 生成运行参数
 	os.Args = getArgsV4Compatible()
 	base.RootCommand.Long = "Xrays is a platform for building proxies."
+
+	base.RootCommand.Commands = append(
+		[]*base.Command{
+			cmdRun,
+			cmdVersion,
+		},
+		base.RootCommand.Commands...,
+	)
+
+	base.Execute()
 }
 
 func getArgsV4Compatible() []string {
