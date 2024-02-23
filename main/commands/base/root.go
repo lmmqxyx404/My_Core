@@ -5,6 +5,7 @@ var RootCommand *Command
 
 func init() {
 	RootCommand = &Command{
+		// transform the standard command to RootCommand
 		UsageLine: CommandEnv.Exec,
 		Long:      "The root command",
 	}
