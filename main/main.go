@@ -5,10 +5,13 @@ import (
 	"os"
 
 	"github.com/lmmqxyx404/my_core/main/commands/base"
+	// 必须加载这个 package
+	_ "github.com/lmmqxyx404/my_core/main/distro/all"
 )
 
+// 程序入口
 func main() {
-	// 生成运行参数
+	// 生成可以被解析的命令
 	os.Args = getArgsV4Compatible()
 	base.RootCommand.Long = "Xrays is a platform for building proxies."
 
@@ -19,14 +22,16 @@ func main() {
 		},
 		base.RootCommand.Commands...,
 	)
-
 	base.Execute()
 }
 
+// 主要处理传进来的 命令行参数
 func getArgsV4Compatible() []string {
+	// 1. 默认执行 run 参数
 	if len(os.Args) == 1 {
 		return []string{os.Args[0], "run"}
 	}
+	// 2. 处理 '-'
 	if os.Args[1][0] != '-' {
 		return os.Args
 	}

@@ -3,8 +3,8 @@ package all
 import (
 	"fmt"
 
-	"github.com/xtls/xray-core/common/uuid"
-	"github.com/xtls/xray-core/main/commands/base"
+	"github.com/lmmqxyx404/my_core/common/uuid"
+	"github.com/lmmqxyx404/my_core/main/commands/base"
 )
 
 var cmdUUID = &base.Command{
@@ -28,6 +28,7 @@ var input = cmdUUID.Flag.String("i", "", "")
 func executeUUID(cmd *base.Command, args []string) {
 	var output string
 	if l := len(*input); l == 0 {
+		// anchor3. call common
 		u := uuid.New()
 		output = u.String()
 	} else if l <= 30 {

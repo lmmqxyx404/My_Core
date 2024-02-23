@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
+	"github.com/lmmqxyx404/my_core/core"
 	"github.com/lmmqxyx404/my_core/main/commands/base"
-	"github.com/xtls/xray-core/core"
 )
 
 var cmdVersion = &base.Command{
@@ -19,7 +19,9 @@ func executeVersion(cmd *base.Command, args []string) {
 	printVersion()
 }
 
+// must use the core description
 func printVersion() {
+	// anchor1: call the xray core
 	version := core.VersionStatement()
 	for _, s := range version {
 		fmt.Println(s)

@@ -2,6 +2,7 @@ package main
 
 import "github.com/lmmqxyx404/my_core/main/commands/base"
 
+// todo: add more func
 var cmdRun = &base.Command{
 	UsageLine: "{{.Exec}} run [-c config.json] [-confdir dir]",
 	Short:     "Run Xray with config, the default command",

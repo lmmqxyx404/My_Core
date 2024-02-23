@@ -61,6 +61,7 @@ BigCmdLoop:
 			}
 
 			buildCommandText(cmd)
+			// todo: verify the real execute position
 			cmd.Run(cmd, args)
 			Exit()
 			return
